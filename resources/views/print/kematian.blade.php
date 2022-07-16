@@ -21,10 +21,6 @@
                 margin-left: 30%
             }
 
-            table tr td,
-            table tr th{
-                font-size: 10pt
-            }
         </style>
         <div class="container">
             <div style="width: 100%">
