@@ -65,6 +65,9 @@
 
                                                                 <td>
                                                                     <div class="d-flex">
+                                                                        <a href="/print/usaha/{{$data->id}}" class="h3">
+                                                                            <i class="fas fa-print m-1"></i>
+                                                                        </a>
                                                                         <a href="#" class="h3"
                                                                             data-toggle="modal" data-target="#edit"
                                                                             onclick='edit("{{ $data->id }}")'>

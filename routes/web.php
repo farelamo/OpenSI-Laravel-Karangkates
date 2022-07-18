@@ -22,6 +22,7 @@ Route::middleware('auth')->group(function(){
     /* PRINT ROUTE */
     Route::prefix('print')->group(function(){
         Route::get('kematian/{id}', 'Print\PrintKematianController@print');
+        Route::get('usaha/{id}', 'Print\PrintUsahaController@print');
     });
     
     /* USER ROUTE */
