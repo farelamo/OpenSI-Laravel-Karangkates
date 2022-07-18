@@ -54,7 +54,7 @@
 
                                                                 <td>{{ $data->jenis }}</td>
 
-                                                                @if ($data->approve === 1)
+                                                                @if ($data->nomor_surat != null)
                                                                     <td>
                                                                         <button class="btn btn-success" disabled>Sudah Approve</button>
                                                                     </td>
