@@ -33,7 +33,7 @@
                         <h6 class="head">PEMERINTAH KABUPATEN MALANG</h6>
                         <h6 class="head" >KECAMATAN SUMBER PUCUNG</h6>
                         <h5 class="head">DESA KARANGKATES</h5>
-                        <p class="head" style="text-decoration: underline; font-size: 12pt">Jl. Pandan No. 05 (0341) 383881 Kode Pos 65165 Desa Karangkates</p>
+                        <p class="head" style="text-decoration: underline; font-size: 12pt">Jalan Pandan 05 Karangkates – Kode Pos 65165 Telp. (0341) 383881</p>
                     </div>
                 </div>
             </div>
