@@ -66,6 +66,9 @@
 
                                                                 <td>
                                                                     <div class="d-flex">
+                                                                        <a href="/print/global/{{$data->jenis}}/{{$data->id}}" class="h3">
+                                                                            <i class="fas fa-print m-1"></i>
+                                                                        </a>
                                                                         <p id="{{ $data->id }}" class="d-none">
                                                                             {{ Auth::user()->fname }}, {{ Auth::user()->lname }}
                                                                         </p>

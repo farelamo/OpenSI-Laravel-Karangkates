@@ -23,6 +23,7 @@ Route::middleware('auth')->group(function(){
     Route::prefix('print')->group(function(){
         Route::get('kematian/{id}', 'Print\PrintKematianController@print');
         Route::get('usaha/{id}', 'Print\PrintUsahaController@print');
+        Route::get('global/{jenis}/{id}', 'Print\PrintGlobalController@print');
     });
     
     /* USER ROUTE */
