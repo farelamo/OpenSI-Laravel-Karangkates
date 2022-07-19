@@ -3,78 +3,32 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\Usaha;
-use Illuminate\Support\Facades\Auth;
+use App\Services\user\UsahaService;
 use App\Http\Requests\User\UsahaRequest;
 
 class UsahaController extends Controller
 {
+    public function __construct(UsahaService $service){
+        $this->service = $service;
+    }
+
     public function index()
     {
-        $usaha = Usaha::all()->except(['created_at', 'updated_at'])
-                    ->where('user_id', Auth::user()->id);
-
-        return view('user.usaha.index', compact('usaha'));
+       return $this->service->getAll();
     }
 
     public function store(UsahaRequest $request)
     {
-        try {
-            Usaha::create([
-                'user_id'       => Auth::user()->id,
-                'nomor_surat'   => null,
-                'nama'          => $request->nama,
-                'jenis'         => $request->jenis,
-                'tempat'        => $request->tempat,
-                'pemasaran'     => $request->pemasaran,
-                'tahun_berdiri' => $request->tahun_berdiri,
-            ]);
-
-            alert()->success('success', 'Surat berhasil dibuat');
-            return redirect('/surat-usaha');
-        }catch(Exception $e){
-            alert()->error('error', 'Surat tidak berhasil dibuat');
-            return redirect('/surat-usaha');
-        }
-    }
-
-    public function show($id)
-    {
-        return view('user.usaha.show');
+        return $this->service->create($request);
     }
 
     public function update(UsahaRequest $request, $id)
     {
-        try {
-            $data = Usaha::find($id);
-            $data->update([
-                'user_id'       => Auth::user()->id,
-                'nomor_surat'   => null,
-                'nama'          => $request->nama,
-                'jenis'         => $request->jenis,
-                'tempat'        => $request->tempat,
-                'pemasaran'     => $request->pemasaran,
-                'tahun_berdiri' => $request->tahun_berdiri,
-            ]);
-
-            alert()->success('success', 'Surat berhasil diupdate');
-            return redirect('/surat-usaha');
-        }catch(Exception $e){
-            alert()->error('error', 'Surat tidak berhasil diupdate');
-            return redirect('/surat-usaha');
-        }
+        return $this->service->update($request, $id);
     }
 
     public function destroy($id)
     {
-        try {
-            $data = Usaha::find($id)->delete();
-            alert()->success('success', 'Surat berhasil dihapus');
-            return redirect('/surat-usaha');
-        }catch(Exception $e){
-            alert()->error('error', 'Surat tidak berhasil dihapus');
-            return redirect('/surat-usaha');
-        }
+        return $this->service->delete($id);
     }
 }
