@@ -1,5 +1,5 @@
 <div class="horizontal-bar">
-    <div class="logo-box"><a href="#" class="logo-text">Connect</a></div>
+    <div class="logo-box"><a href="/dashboard" class="logo-text">SmartService</a></div>
     <a href="#" class="hide-horizontal-bar"><i class="material-icons">close</i></a>
     <div class="container">
         <div class="row">
@@ -20,7 +20,6 @@
                                     <li><a href="/admin/surat-kematian">Kematian</a></li>
                                     <li> <a href="/admin/surat-lainnya">Surat Lainnya</a></li>
                                 </ul>
-                                <li><a href="/user">Pengaturan Admin</a></li>
                             @endif
                         </li>
                     </ul>
